@@ -4,11 +4,23 @@ class Conuter extends Component {
   state = {
     count: 0,
   };
+
+  handleIncrement = () => {
+    let { count } = this.state;
+    count = count + 1;
+    this.setState({ count });
+  };
+
   render() {
     return (
       <React.Fragment>
-        <spam className={this.getBadgeClasses()}>{this.formatCount()}</spam>
-        <button className="btn btn-secondary btn-sm">Increment</button>
+        <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
+        <button
+          onClick={this.handleIncrement}
+          className="btn btn-secondary btn-sm"
+        >
+          Increment
+        </button>
       </React.Fragment>
     );
   }
